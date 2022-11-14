@@ -67,7 +67,7 @@ body {
     margin: 0 2%;
     border-radius: 10px;
     min-width: 15%;
-    min-height: 12em;
+    min-height: 14em;
 }
 
 .box > img {
@@ -94,12 +94,6 @@ body {
     .box {
         min-width: 60%;
         max-height: 80%;
-    }
-}
-
-@media screen and (max-height: 400px) {
-    .box {
-        height: 100%;
     }
 }
 
