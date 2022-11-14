@@ -1,14 +1,16 @@
 const logo = document.getElementById("logo");
 const favorites = document.getElementById("favorites");
-const paintings = document.querySelectorAll(".painting");
-const one = document.querySelector(".one");
-const two = document.querySelector(".two");
+const paintings = document.querySelector(".painting");
+const box = document.querySelectorAll(".box");
 
 favorites.addEventListener("click", function() {
     location.href = "favorites.html"
 })
 
-one.addEventListener("mouseover", function() {
-    const wrapper = document.createElement("div");
-    one.appendChild(wrapper);
+box.forEach((paint, index) => {
+    paint.addEventListener("mouseover", function() {
+        const wrapper = document.createElement("div");
+        paint.appendChild(wrapper);
+        console.log(paint)
+    })
 })
