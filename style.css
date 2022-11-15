@@ -21,6 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(40px);
+    min-height: 640px;
 }
 
 .frame {
