@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: visible;
 }
 body {
     display: flex;
@@ -67,7 +66,7 @@ body {
     margin: 0 2%;
     border-radius: 10px;
     min-width: 15%;
-    min-height: 14em;
+    min-height: 18em;
 }
 
 .box > img {
@@ -94,6 +93,13 @@ body {
     .box {
         min-width: 60%;
         max-height: 80%;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    .input {
+        display: flex;
+        align-items: flex-end;
     }
 }
 
