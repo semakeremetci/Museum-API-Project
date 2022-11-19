@@ -68,8 +68,8 @@ body {
     display: flex;
     margin: 0 2%;
     border-radius: 10px;
-    min-width: 15%;
-    min-height: 15em;
+    min-width: 12em;
+    min-height: 16em;
     position: relative;
     overflow: hidden;
 }
@@ -92,6 +92,9 @@ body {
 .heart {
     display: none;
 }
+.heart_filled {
+    display: none;
+}
 .heart:hover {
     cursor: pointer;
 }
@@ -103,14 +106,33 @@ body {
 }
 
 .box:hover .heart {
+    box-sizing: border-box;
     display: block;
     position: absolute;
     top: 0;
-    width: 2em;
+    width: 2.5em;
     height: 2em;
     z-index: 2;
     margin: 0.5em;
-    fill:#a9def9c0;
+    fill:none;
+    stroke: #a9def9;
+    stroke-width: 40;
+    
+}
+
+.box:hover .heart_filled {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 2.5em;
+    height: 2em;
+    z-index: 2;
+    margin: 0.5em;
+    fill:#a9def9;
+    stroke: #a9def9;
+    stroke-width: 40;
+    cursor: pointer;
 }
 .box:hover .go {
     display: block;
@@ -153,7 +175,7 @@ body {
 
 @media screen and (max-width: 1000px) {
     .box {
-        min-width: 30%;
+        min-width: 20em;
     }
 }
 @media screen and (max-width: 820px) {
@@ -164,16 +186,10 @@ body {
 @media screen and (max-width: 539px) {
     .box {
         min-width: 60%;
-        max-height: 80%;
+        max-height: 16em;
     }
 }
 
-@media screen and (max-height: 400px) {
-    .input {
-        display: flex;
-        align-items: flex-end;
-    }
-}
 
 .input {
     display: flex;

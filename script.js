@@ -2,9 +2,20 @@ const logo = document.getElementById("logo");
 const favorites = document.getElementById("favorites");
 const paintings = document.querySelector(".painting");
 const box = document.querySelectorAll(".box");
+const hearts = document.querySelectorAll(".heart");
 
 favorites.addEventListener("click", function() {
     location.href = "favorites.html"
+})
+
+hearts.forEach((item, index) => {
+    item.addEventListener("click", function() {
+        if(item.classList.contains("heart")) {
+            item.classList.replace("heart", "heart_filled")
+        } else if(item.classList.contains("heart_filled")) {
+            item.classList.replace("heart_filled", "heart")
+        }
+    })
 })
 
 // box.forEach((paint, index) => {
