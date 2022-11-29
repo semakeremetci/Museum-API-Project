@@ -53,6 +53,7 @@ body {
 }
 #favorites {
     cursor: pointer;
+    text-shadow: 2px 2px #a9def9;
 }
 
 .painting {
@@ -220,4 +221,13 @@ body {
     min-width: 18em;
     border: 2px solid #fcf6bd;
     outline: none;
+}
+
+
+.frame > h1 {
+    color: #fcf6bd;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px #a9def9;
+    margin-bottom: 1em;
 }

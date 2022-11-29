@@ -2,7 +2,6 @@ const favorites = document.getElementById("favorites");
 const hearts = document.querySelectorAll(".heart");
 const svg = document.querySelectorAll(".svg");
 const svgData = localStorage.getItem("svgs");
-// console.log(data)
 let svgInfo = svgData ? svgData.split(",") : [];
 // console.log(svgInfo);
 
