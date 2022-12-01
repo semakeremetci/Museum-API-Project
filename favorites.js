@@ -1,6 +1,7 @@
 const logo = document.getElementById("logo");
 const svgBox = document.querySelectorAll(".svg");
 const box = document.querySelectorAll(".box");
+const heart = document.querySelectorAll(".heart");
 const svgs = localStorage.getItem("svgs");
 const svgArr = svgs ? svgs.split(",") : [];
 console.log(svgArr)
@@ -16,10 +17,23 @@ if (svgArr.length != []) {
     }
 }
 
+box.forEach((card, index) => {
+    // console.log(String(index))
+    if(svgArr.includes(String(index))) {
+        card.style.display = "flex"
+    } else {
+        card.style.display = "none"
+    }
+})
 
-
-// if(svgArr.length != [] ) {
-//         const box = document.createElement("div");
-//         box.classList.add("box");
-//         painting.appendChild(box);
-// }
+heart.forEach((item, index) => {
+    item.addEventListener("click", function() {
+        if(item.classList.contains("heart_filled")) {
+            item.classList.replace("heart_filled", "heart")
+            let newIndx = svgArr.indexOf(index);
+            // console.log(newIndx)
+            let spliceSvg = svgArr.splice(newIndx, 1);
+            localStorage.setItem("svgs", svgArr);
+        }    
+    })
+})
