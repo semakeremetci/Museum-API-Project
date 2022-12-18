@@ -16,15 +16,14 @@ hearts.forEach((item, index) => {
         if(item.classList.contains("heart")) {
             item.classList.replace("heart", "heart_filled")
             // console.log(item.classList)
-            svgInfo.push(index);
+            svgInfo.push(index.toString());
             localStorage.setItem("svgs", svgInfo);
         } else if(item.classList.contains("heart_filled")) {
             item.classList.replace("heart_filled", "heart")
-            let newIndex = svgInfo.indexOf(index);
-            // console.log(newIndex)
+            let newIndex = svgInfo.indexOf(index.toString());
+            console.log(newIndex)
             let splicedSvg = svgInfo.splice(newIndex, 1);
             localStorage.setItem("svgs", svgInfo);
-            // console.log(paintingInfo);
         }
     })
 })
