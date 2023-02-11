@@ -1,0 +1,247 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    overflow: visible;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #fcf6bd , #e4c1f9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(40px);
+    min-height: 640px;
+}
+
+.frame {
+    width: 72%;
+    height: 80%;
+    border: 5px solid #a9def9;
+    padding: 29px 10px;
+    box-shadow: 10px 15px 18px #888888;
+    border-radius: 20px;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 350px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 9%;
+    width: 100%;
+    color: #004e89;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+}
+
+#logo {
+    text-shadow: 2px 2px #a9def9;
+    cursor: pointer;
+}
+#favorites {
+    cursor: pointer;
+    text-shadow: 2px 2px #a9def9;
+}
+
+.painting {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width:100%;
+    height: 100%;
+    min-height: 20em;
+}
+
+.box {
+    background-color:#004e89;
+    margin: 1%;
+    height: 70%;
+    border-radius: 10px;
+    width: 12em;
+    min-height: 18em;
+    position: relative;
+    overflow: hidden;
+}
+.box > img {
+    border-radius: 10px;
+    border: 3px inset #004e89;
+    object-fit: cover;
+    filter: brightness(100%);
+}
+.box:hover img {
+    filter: brightness(50%);
+}
+
+.info {
+    display: none;
+    user-select: none;
+}
+.info > h3 {
+    color:#a9def9;
+}
+.heart {
+    display: none;
+}
+.heart_filled {
+    display: none;
+}
+.heart:hover {
+    cursor: pointer;
+}
+.go {
+    display: none;
+}
+.go:hover {
+    cursor: pointer;
+}
+
+.box:hover .heart {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 2.5em;
+    height: 2em;
+    z-index: 2;
+    margin: 0.5em;
+    fill:none;
+    stroke: #a9def9;
+    stroke-width: 40;
+    
+}
+
+.box:hover .heart_filled {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 2.5em;
+    height: 2em;
+    z-index: 2;
+    margin: 0.5em;
+    fill:#a9def9;
+    stroke: #a9def9;
+    stroke-width: 40;
+    cursor: pointer;
+}
+.box:hover .go {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2em;
+    height: 2em;
+    z-index: 2;
+    margin: 0.5em;
+    fill:#a9def9c0;
+}
+
+.box:hover .info {
+    display: block;
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+    background-color:black;
+    opacity: 0.7;
+    border-radius: 0 0 10px 10px;
+    color: white;
+    filter: brightness(100%);
+    padding: 5px 10px;
+    animation-name: translateCard;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes translateCard {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(24%);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .box {
+        min-width: 20em;
+        
+    }
+    .painting {
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 820px) {
+    .box {
+        min-width: 45%;
+        max-height: 50%;
+    }
+    .painting {
+        justify-content: center;
+    }
+}
+/* phone */
+@media screen and (max-width: 539px) {
+    .box {
+        min-width: 90%;
+        max-height: 60%;
+    }
+    .painting {
+        justify-content: center;
+    }
+}
+
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    width: 100%;
+    height: 10%;
+}
+
+.input > input {
+    width: 20%;
+    height: 60%;
+    border-radius: 40px;
+    border: 2px solid #004e89;
+    padding: 1em;
+    font-size: 100%;
+    min-width: 10em;
+    outline: none;
+    transition: 0.3s;
+    font-family: 'Lobster', cursive;
+}
+.input > input:focus {
+    width: 50%;
+    min-width: 18em;
+    border: 2px solid #fcf6bd;
+    outline: none;
+}
+
+
+.frame > h1 {
+    color: #fcf6bd;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px #a9def9;
+
+}
