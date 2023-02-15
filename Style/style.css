@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lobster', cursive;
 }
 body {
     display: flex;
@@ -13,8 +14,7 @@ body {
 }
 .container {
     width: 100vw;
-    height: 100vh;
-    background-color: red; /* For browsers that do not support gradients */
+    height: 100vh;  
     background-image: linear-gradient(to right, #fcf6bd , #e4c1f9);
     display: flex;
     flex-direction: column;
@@ -25,15 +25,15 @@ body {
 }
 
 .frame {
-    width: 80%;
+    width: 90%;
     height: 80%;
     border: 5px solid #a9def9;
-    padding: 29px 10px;
     box-shadow: 10px 15px 18px #888888;
     border-radius: 20px;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-height: 350px;
 }
 .navbar {
@@ -58,20 +58,22 @@ body {
 
 .painting {
     display: flex;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     overflow-x: scroll;
+    align-items: center;
     width: 100%;
-    height: 60%;
-    min-height: 20em;
+    padding: 2em 0;
+    min-height: 57%;
+    background-image: linear-gradient(to right,#e4c1f9, #fcf6bd);
 }
 
 .box {
     background-color:#004e89;
     display: flex;
-    margin: 0 2%;
+    margin: 0 1em ;
     border-radius: 10px;
     min-width: 12em;
-    min-height: 18em;
+    height: 16em;
     max-width: 12em;
     position: relative;
     overflow: hidden;
@@ -80,7 +82,6 @@ body {
     border-radius: 10px;
     border: 3px inset #004e89;
     object-fit: cover;
-    filter: brightness(100%);
 }
 .box:hover img {
     filter: brightness(50%);
@@ -190,7 +191,11 @@ body {
 @media screen and (max-width: 539px) {
     .box {
         min-width: 60%;
-        max-height: 18em;
+        height: 15em;
+    }
+    .painting {
+        max-height: 20em;
+        padding: 1.5em;
     }
 }
 
@@ -206,7 +211,7 @@ body {
 
 .input > input {
     width: 20%;
-    height: 60%;
+    height: 70%;
     border-radius: 40px;
     border: 2px solid #004e89;
     padding: 1em;
@@ -230,4 +235,78 @@ body {
     font-family: 'Lobster', cursive;
     text-shadow: 2px 2px #a9def9;
     margin-bottom: 1em;
+}
+
+/*  */
+
+.input_search {
+    padding-top: 1em;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+} 
+
+.search_card {
+    display: flex;
+    flex-direction: column;
+    width: 30.5%;
+    height: 25em;
+    cursor: pointer;
+    position: relative;
+    margin: 0.5em 1em;
+}
+
+.search_card:hover .card_image {
+    filter: brightness(40%);
+}
+.search_card:hover .card_name {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 2em;
+    color: #a9def9;
+    filter: brightness(90%);
+    padding: 0 1em;
+    border-radius: 0 0 10px 10px;
+}
+.search_card:hover .card_description {
+    display: block;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    filter: brightness(100%);
+    padding: 0 1em;
+}
+
+@media screen and (max-width: 820px) {
+    .search_card {
+        width: 100%;
+    }
+}
+
+.card_description {
+    display: none;
+}
+
+.card_image {
+    width: 100%;
+    height:100%;
+    border-radius: 15px;
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 1px solid #004e89;
+}
+
+.card_name {
+    display: none;
+    font-family: 'Lobster', cursive;
+    font-size: 21px;
 }
