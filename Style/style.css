@@ -1,6 +1,6 @@
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     display: none;
-}
+} */
 
 * {
     margin: 0;
@@ -11,6 +11,9 @@
 body {
     display: flex;
     overflow: visible;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 .container {
     width: 100vw;
@@ -36,6 +39,10 @@ body {
     align-items: center;
     min-height: 350px;
 }
+.frame::-webkit-scrollbar {
+    display: none;
+}
+
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -60,11 +67,36 @@ body {
     display: flex;
     border-radius: 10px 10px 0 0;
     overflow-x: scroll;
+    overflow-y: hidden;
     align-items: center;
     width: 100%;
     padding: 2em 0;
     min-height: 57%;
     background-image: linear-gradient(to right,#e4c1f9, #fcf6bd);
+}
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+  /* Track */
+.painting::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+  /* Handle */
+.painting::-webkit-scrollbar-thumb {
+    background:#004e89; 
+    border-radius: 10px;
+}
+
+  /* Handle on hover */
+.painting::-webkit-scrollbar-thumb:hover {
+    background: #a9def9; 
+}
+
+.painting::-webkit-scrollbar-button {
+    width: 200px;
 }
 
 .box {
@@ -254,7 +286,6 @@ body {
     flex-direction: column;
     width: 30.5%;
     height: 25em;
-    cursor: pointer;
     position: relative;
     margin: 0.5em 1em;
 }
@@ -303,10 +334,49 @@ body {
     background-repeat: no-repeat;
     text-align: center;
     border: 1px solid #004e89;
+    cursor: zoom-in;    
 }
 
 .card_name {
     display: none;
     font-family: 'Lobster', cursive;
     font-size: 21px;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    border-radius: 24px;
+    width: 50%;
+    height: 83%;
+    position: relative;
+    z-index: 99;
+    background-color: rgba(252, 237, 237, 0.644);
+    border: 1px solid #e4c1f9;
+}
+
+.backdrop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+.modal-container > .modal-container--image {
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assests/vangogh.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
 }

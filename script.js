@@ -5,7 +5,7 @@ const svgData = localStorage.getItem("svgs");
 let svgInfo = svgData ? svgData.split(",") : [];
 const inputField = document.querySelector("input");
 const frame = document.querySelector(".frame");
-
+const modal = document.querySelector(".modal")
 
 favorites.addEventListener("click", function() {
     location.href = "favorites.html"
@@ -52,14 +52,23 @@ inputField.addEventListener("keydown",function (e) {
         ).then(
             (data) => {
                 data.data.forEach(item => {
-                    console.log(item.creators[0].description)
+                    // console.log(item.creators[0].description)
                     const input_search = document.querySelector(".input_search");
                     const search_card = document.createElement("div"); search_card.classList.add("search_card"); input_search.appendChild(search_card);
                     const card_image = document.createElement("div"); card_image.classList.add("card_image"); search_card.appendChild(card_image);
                     search_card.insertAdjacentHTML("beforeend","<p class='card_name'>" + "<strong>" + item.title + "</strong></p>" + "<p class='card_description'>" + item.creators[0].description + "</p>")
                     card_image.style.backgroundImage = "url("+ item.images.web.url + ")"
+
+                    card_image.addEventListener("click", function() {
+                        modal.style.display = "flex";
+                        document.querySelector(".modal-container--image").style.backgroundImage = "url(" + item.images.web.url + ")"
+                    })
                 })
             }
         ).catch(err => console.log(err));
             }
+})
+
+modal.lastElementChild.addEventListener("click", function() {
+    modal.style.display = "none";
 })
