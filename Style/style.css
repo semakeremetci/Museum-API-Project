@@ -210,27 +210,6 @@ body::-webkit-scrollbar {
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .box {
-        min-width: 20em;
-    }
-}
-@media screen and (max-width: 820px) {
-    .box {
-        min-width: 45%;
-    }
-}
-@media screen and (max-width: 539px) {
-    .box {
-        min-width: 60%;
-        height: 15em;
-    }
-    .painting {
-        max-height: 20em;
-        padding: 1.5em;
-    }
-}
-
 
 .input {
     display: flex;
@@ -314,11 +293,6 @@ body::-webkit-scrollbar {
     padding: 0 1em;
 }
 
-@media screen and (max-width: 820px) {
-    .search_card {
-        width: 100%;
-    }
-}
 
 .card_description {
     display: none;
@@ -379,4 +353,32 @@ body::-webkit-scrollbar {
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .box {
+        min-width: 20em;
+    }
+}
+@media screen and (max-width: 820px) {
+    .box {
+        min-width: 45%;
+    }
+    .search_card {
+        width: 100%;
+    }
+    .modal-container {
+        width: 83%;
+        height: 60%;
+    }
+}
+@media screen and (max-width: 539px) {
+    .box {
+        min-width: 60%;
+        height: 15em;
+    }
+    .painting {
+        max-height: 20em;
+        padding: 1.5em;
+    }
 }
