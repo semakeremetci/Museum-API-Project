@@ -356,6 +356,35 @@ body::-webkit-scrollbar {
     background-position-x: center;
 }
 
+.search_card:hover .heart {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 2.5em;
+    height: 2em;
+    z-index: 2;
+    margin: 0.5em;
+    fill:none;
+    stroke: #a9def9;
+    stroke-width: 40;
+}
+
+.search_card:hover .heart_filled {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 2.5em;
+    height: 2em;
+    z-index: 2;
+    margin: 0.5em;
+    fill:#a9def9;
+    stroke: #a9def9;
+    stroke-width: 40;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1000px) {
     .box {
         min-width: 20em;
