@@ -12,4 +12,6 @@ Features:
 
 - Adding Favorites ✅
 
+- Modal ✅
+
 Live Project : https://semakeremetci.github.io/Museum-API-Project/
